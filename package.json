@@ -1,0 +1,40 @@
+{
+  "name": "nativescript-custom-entitlements",
+  "version": "0.0.1",
+  "description": "Nativescript hook for supporting custom Xcode 8 entitlements",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node postinstall.js",
+    "preuninstall": "node preuninstall.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Essent/nativescript-custom-entitlements.git"
+  },
+  "keywords": [
+    "nativescript"
+  ],
+  "author": "Henk Bakker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Essent/nativescript-custom-entitlements/issues"
+  },
+  "homepage": "https://github.com/Essent/nativescript-custom-entitlements#readme",
+  "nativescript": {
+    "hooks": [
+			{
+        "type": "before-prepare",
+        "script": "lib/before-prepare.js",
+        "inject": true
+      },
+      {
+        "type": "after-prepare",
+        "script": "lib/after-prepare.js",
+        "inject": true
+      }
+    ]
+  },
+  "dependencies": {
+    "nativescript-hook": "^0.2.1"
+  }
+}
