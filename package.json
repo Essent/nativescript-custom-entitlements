@@ -1,6 +1,6 @@
 {
   "name": "nativescript-custom-entitlements",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Nativescript hook for supporting custom Xcode 8 entitlements",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
