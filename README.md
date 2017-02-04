@@ -30,3 +30,22 @@ You'll need to have a entitlements file `app.entitlements` in the `app/App_Resou
 </dict>
 </plist>
 ```
+
+## Run Demo
+
+```bash
+npm run setup
+npm run demo.ios
+```
+
+## Check entitlements
+
+```bash
+npm run setup
+npm run resetdemo
+cd demo
+tns build ios --for-device
+cp demo/platforms/ios/build/device/demo.ipa build/demo/platforms/ios/build/device/demo.zip
+unzip demo/platforms/ios/build/device/demo.zip -d demo/platforms/ios/build/device/
+codesign -d --entitlements :- "demo/platforms/ios/build/device/Payload/demo.app"
+```
