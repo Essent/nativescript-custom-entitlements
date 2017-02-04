@@ -42,3 +42,7 @@ typings/
 .idea/
 .settings/
 .vscode/
+
+.tscache/
+/demo/node_modules/
+/demo/platforms/

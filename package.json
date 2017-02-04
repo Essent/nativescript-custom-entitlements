@@ -5,7 +5,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "node postinstall.js",
-    "preuninstall": "node preuninstall.js"
+    "preuninstall": "node preuninstall.js",
+    "demo.ios": "npm run preparedemo && cd demo && ENV=tst tns emulate ios --log trace",
+    "demo.android": "npm run preparedemo && cd demo && tns run android",
+    "debug.ios": "npm run preparedemo && cd demo && tns debug ios --emulator",
+    "debug.android": "npm run preparedemo && cd demo && tns debug android --emulator",
+    "preparedemo": "cd demo && tns plugin remove nativescript-custom-entitlements && tns plugin add .. && tns install",
+    "resetdemo": "cd demo && tns plugin remove nativescript-custom-entitlements && tns plugin add .. && tns prepare android && tns prepare ios && cd ..",
+    "afterprepare": "cd demo && tns prepare android && tns prepare ios && cd ..",
+    "setup": "cd demo && npm install && tns plugin add .. && cd .."
   },
   "repository": {
     "type": "git",
