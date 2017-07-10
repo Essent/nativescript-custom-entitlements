@@ -41,11 +41,12 @@ npm run demo.ios
 ## Check entitlements
 
 ```bash
+# change package.json to create a bundle identifier that can be signed by your organization
 npm run setup
 npm run resetdemo
 cd demo
 tns build ios --for-device
-cp demo/platforms/ios/build/device/demo.ipa build/demo/platforms/ios/build/device/demo.zip
-unzip demo/platforms/ios/build/device/demo.zip -d demo/platforms/ios/build/device/
-codesign -d --entitlements :- "demo/platforms/ios/build/device/Payload/demo.app"
+cp ./platforms/ios/build/device/demo.ipa ./platforms/ios/build/device/demo.zip
+unzip ./platforms/ios/build/device/demo.ipa -d ./platforms/ios/build/device/
+codesign -d --entitlements :- "./platforms/ios/build/device/Payload/demo.app"
 ```
