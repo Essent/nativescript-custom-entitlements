@@ -1,6 +1,6 @@
 {
   "name": "nativescript-custom-entitlements",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Nativescript hook for supporting custom Xcode 8 entitlements",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -40,7 +40,10 @@
         "script": "lib/after-prepare.js",
         "inject": true
       }
-    ]
+    ],
+    "tns-ios": {
+      "version": "3.1.0"
+    }
   },
   "dependencies": {
     "fs-promise": "^2.0.0",
